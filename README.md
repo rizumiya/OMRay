@@ -16,7 +16,8 @@ _Current Features_ :
 
 
 _Supported Answer Sheet_:
-![logo](p.jpg){ width=30% }
+<img src="p.jpg" alt="supported answer sheet" width="100">
+
 
 
 _Screenshots_:

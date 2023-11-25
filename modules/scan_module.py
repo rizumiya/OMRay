@@ -5,7 +5,6 @@ from datetime import datetime
 
 from . import general_functions as func
 
-
 class ScanModule:
     def __init__(self, userp, passw):
 
@@ -138,7 +137,6 @@ class ScanModule:
         imgGray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         imgGray = cv2.bilateralFilter(imgGray, 11, 17, 17)
 
-        # Menggunakan dilasi untuk memperbesar ketebalan garis tepi
         kernel = np.ones((2, 2), np.uint8)
         dilated_edges = cv2.Canny(imgGray, self.threshold_value, self.threshold_value * 2)
         dilated_edges = cv2.dilate(dilated_edges, kernel, iterations=1)
@@ -229,7 +227,6 @@ class ScanModule:
 
         return jawabanPixelVal
 
-    
     def check_answer(self, boxes):
         jawabanPixelVal = self.get_student_answer(boxes)
 
@@ -238,7 +235,7 @@ class ScanModule:
             arr = jawabanPixelVal[x]
             nilaiJawabanIndex = np.where(arr == np.amax(arr))
             self.jawabanIndex.append(nilaiJawabanIndex[0][0])
-
+        
         # Evaluate the answers
         penilaian = []
         salah = []
@@ -255,7 +252,6 @@ class ScanModule:
                 pass
 
         jawab_benar = sum(penilaian)  # 1 nilai
-
         return jawab_benar, penilaian
 
 
@@ -279,11 +275,8 @@ class ScanModule:
                 frame = cv2.imread(self.imgPath)
 
             frame = self.rotate_img(frame)
-            
             frame, valid_contours = self.preprocessing(frame)
-
             imgCopy = frame.copy()
-
             total_score = 0
             jwb_benar = 0
 
@@ -291,11 +284,8 @@ class ScanModule:
             for i, boxpilgan in enumerate(valid_contours):
                 # Ambil titik sudut
                 x, y, w, h = cv2.boundingRect(boxpilgan)
-
                 cv2.drawContours(imgCopy, [boxpilgan], -1, (0, 255, 0), 2)
-
                 warped = self.warp_prespective(frame, boxpilgan.reshape(4, 2))
-
                 imgWrapGray = cv2.cvtColor(warped, cv2.COLOR_BGR2GRAY)
                 imgTresh = cv2.threshold(imgWrapGray, 140, 255,
                                          cv2.THRESH_BINARY_INV)[1]
@@ -305,12 +295,11 @@ class ScanModule:
                 self.ansid = i
 
                 jawaban_benar, penilaian = self.check_answer(boxes)
-                
                 jwb_benar += jawaban_benar
-
                 imgWarpMentah = np.zeros_like(warped)
-
-                self.show_answers(imgWarpMentah, self.jawabanIndex, penilaian, self.ans, self.queperbox, self.choice, self.ansid)
+                self.show_answers(imgWarpMentah, self.jawabanIndex, 
+                                  penilaian, self.ans, self.queperbox, 
+                                  self.choice, self.ansid)
 
                 if self.show_answer:
                     cv2.putText(self.imgFinal, str(jawaban_benar), (x, y-10),

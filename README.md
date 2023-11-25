@@ -24,16 +24,21 @@ _Screenshots_:
 
 Main Menu
 <br>
-<img src="screenshot/mainmenu.png" alt="main menu" width="200">
+<img src="screenshot/mainmenu.png" alt="main menu" width="300">
+<br>
 Subject Menu
 <br>
-<img src="screenshot/subject.png" alt="main menu" width="200">
+<img src="screenshot/subject.png" alt="main menu" width="300">
+<br>
 Record Menu
 <br>
-<img src="screenshot/record.png" alt="main menu" width="200">
+<img src="screenshot/record.png" alt="main menu" width="300">
+<br>
 Setting Menu
 <br>
-<img src="screenshot/setting.png" alt="main menu" width="200">
+<img src="screenshot/setting.png" alt="main menu" width="300">
+<br>
 Start Scanning
 <br>
-<img src="screenshot/scan.png" alt="main menu" width="200">
+<img src="screenshot/scan.png" alt="main menu" width="300">
+<br>

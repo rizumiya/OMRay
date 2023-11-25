@@ -58,7 +58,7 @@ class config:
         db_manager.create_tables()
 
         # Membuat file excel
-        excel_manager = PY_XL("assets/datas/omray.xlsx")
+        excel_manager = PY_XL("omray.xlsx")
         excel_manager.create_excel_file()
 
         # Mengecek jika ada user aktif, jika tidak jalankan checkDataUser

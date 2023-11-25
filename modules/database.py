@@ -4,7 +4,7 @@ import sqlite3
 
 class Database:
     def __init__(self):
-        self.SQLPATH = os.path.join(os.path.dirname(__file__), '..', 'assets', 'datas', 'omr.db')
+        self.SQLPATH = os.path.join(os.getcwd(), 'omr.db')
         self.conn = sqlite3.connect(self.SQLPATH)
         self.cur = self.conn.cursor()
 

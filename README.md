@@ -17,28 +17,31 @@ _Current Features_ :
 
 _Supported Answer Sheet_:
 <br>
-<img src="screenshot/p.jpg" alt="supported answer sheet" width="250">
+<img src="extras/p.jpg" alt="supported answer sheet" width="250">
 
 
 _Screenshots_:
 
 Main Menu
 <br>
-<img src="screenshot/mainmenu.png" alt="main menu" width="300">
+<img src="extras/mainmenu.png" alt="main menu" width="300">
 <br>
 Subject Menu
 <br>
-<img src="screenshot/subject.png" alt="main menu" width="300">
+<img src="extras/subject.png" alt="main menu" width="300">
 <br>
 Record Menu
 <br>
-<img src="screenshot/record.png" alt="main menu" width="300">
+<img src="extras/record.png" alt="main menu" width="300">
 <br>
 Setting Menu
 <br>
-<img src="screenshot/setting.png" alt="main menu" width="300">
+<img src="extras/setting.png" alt="main menu" width="300">
 <br>
 Start Scanning
 <br>
-<img src="screenshot/scan.png" alt="main menu" width="300">
+<img src="extras/scan.png" alt="main menu" width="300">
 <br>
+
+_Usage_:
+Learn usage here 👉 [Usage]("extras/Usage in Indonesia.pdf")

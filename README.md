@@ -17,9 +17,23 @@ _Current Features_ :
 
 _Supported Answer Sheet_:
 <br>
-<img src="p.jpg" alt="supported answer sheet" width="300">
-
+<img src="screenshot/p.jpg" alt="supported answer sheet" width="250">
 
 
 _Screenshots_:
-![logo]()
+
+Main Menu
+<br>
+<img src="screenshot/mainmenu.png" alt="main menu" width="200">
+Subject Menu
+<br>
+<img src="screenshot/subject.png" alt="main menu" width="200">
+Record Menu
+<br>
+<img src="screenshot/record.png" alt="main menu" width="200">
+Setting Menu
+<br>
+<img src="screenshot/setting.png" alt="main menu" width="200">
+Start Scanning
+<br>
+<img src="screenshot/scan.png" alt="main menu" width="200">

@@ -1,3 +1,6 @@
+import os
+import sys
+
 from tkinter import messagebox
 import customtkinter as ctk
 from tkinter import *
@@ -7,13 +10,23 @@ from modules import db_helper as dbh, general_functions as func, scan_answer_key
 import config as cfg
 
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS2
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 class PageSubject(ctk.CTk):
     def __init__(self, id_login):
         super().__init__()
         self.title("OMRay | Subject")
         self.geometry('700x380+300+90')
         self.resizable(False, False)
-        self.iconbitmap('assets/images/OMRay.ico')
+        self.iconbitmap(resource_path('assets\\images\\OMRay.ico'))
 
         # Inisialisasi variable
         self.id_login = id_login
@@ -227,7 +240,7 @@ class CheckBoxWindow(ctk.CTkToplevel):
         self.title("OMRay | Subject")
         self.geometry('500x280+1200+90')
         self.resizable(False, False)
-        self.iconbitmap('assets/images/OMRay.ico')
+        self.iconbitmap(resource_path('assets\\images\\wp.ico'))
 
         # Insialisasi variable utama
 

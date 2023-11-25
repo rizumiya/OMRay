@@ -1,3 +1,6 @@
+import os
+import sys
+
 import tkinter as tk
 import customtkinter as ctk
 import config as cfg
@@ -5,13 +8,25 @@ import config as cfg
 from tkinter import messagebox
 from modules import adv_scan_module as asm, general_functions as func
 
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS2
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
 class PageRecord(ctk.CTk):
     def __init__(self, idlogin):
         super().__init__()
         self.title("OMRay | Add New Record")
         self.geometry('800x385+60+65')
         self.resizable(False, False)
-        self.iconbitmap('assets/images/OMRay.ico')
+        self.iconbitmap(resource_path('assets\\images\\wp.ico'))
 
         self.funct = func.Functions()
         self.id_login = idlogin

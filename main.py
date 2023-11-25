@@ -1,5 +1,5 @@
 import os
-import time
+import sys
 import openpyxl as xl
 import customtkinter as ctk
 
@@ -13,18 +13,29 @@ from modules import general_functions as func, db_helper as dbh, scan_module as 
 from pages import page_signin as signin, page_setting as sett, page_subject as subb, page_record as recc, page_see_rec as srecc
 
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS2
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
 class MainMenu(ctk.CTk):
     def __init__(self, userData):
         super().__init__()
         self.title('OMRay')
         self.geometry('989x732+60+65')
         self.resizable(False, False)
-        self.iconbitmap(default='assets/images/OMRay.ico')
+        self.iconbitmap(default=resource_path('assets\\images\\OMRay.ico'))
 
         # Deklarasi variable
         self.userData: List[str] = userData
         self.funct = func.Functions()
-        self.xlPath = "assets/datas/omray.xlsx"
+        self.xlPath = resource_path(resource_path("omray.xlsx"))
 
         settData = self.funct.getSettingData(userData[1], userData[2])
         self.settData: List[str] = settData
@@ -33,7 +44,7 @@ class MainMenu(ctk.CTk):
         self.toplevel_srecc = None
 
         # Membuat Header
-        self.img = ctk.CTkImage(dark_image=Image.open("assets/images/wp1.png"), size=(160, 160))
+        self.img = ctk.CTkImage(dark_image=Image.open(resource_path("assets\\images\\wp1.png")), size=(160, 160))
         ctk.CTkLabel(self, image=self.img, text=None,bg_color="transparent").place(x=30, y=20)
 
         self.heading = ctk.CTkLabel(self, text='OMRay', text_color='#fff', font=('Fugaz One', 48, 'bold'))
@@ -52,7 +63,7 @@ class MainMenu(ctk.CTk):
         # Membuat Tombol
 
         # Logout
-        self.img_logout = ctk.CTkImage(light_image=Image.open("assets/images/logout.png"), size=(20, 20))
+        self.img_logout = ctk.CTkImage(light_image=Image.open(resource_path("assets\\images\\logout.png")), size=(20, 20))
 
         self.logout_button = ctk.CTkButton(self, text="Logout", image=self.img_logout, compound=RIGHT, 
                                     width=30, height=30, corner_radius=100, cursor='hand2', 
@@ -61,7 +72,7 @@ class MainMenu(ctk.CTk):
 
         # add subject
         self.img_addsbj = ctk.CTkImage(light_image=Image.open(
-            "assets/images/add_sbj.png"), size=(90, 90))
+            resource_path("assets\\images\\add_sbj.png")), size=(90, 90))
 
         self.addsbj_button = ctk.CTkButton(self, text="Subject", image=self.img_addsbj, compound=TOP, 
                                     fg_color="#fff", hover_color="#B2B2B2", text_color="#333030", 
@@ -71,7 +82,7 @@ class MainMenu(ctk.CTk):
 
         # add record
         self.img_addrec = ctk.CTkImage(light_image=Image.open(
-            "assets/images/add_rec.png"), size=(90, 90))
+            resource_path("assets\\images\\add_rec.png")), size=(90, 90))
 
         self.addrec_button = ctk.CTkButton(self, text="Record", image=self.img_addrec, compound=TOP, 
                                     fg_color="#fff", hover_color="#B2B2B2", text_color="#333030", 
@@ -81,7 +92,7 @@ class MainMenu(ctk.CTk):
 
         # setting
         self.img_sett = ctk.CTkImage(light_image=Image.open(
-            "assets/images/sett.png"), size=(90, 90))
+            resource_path("assets\\images\\sett.png")), size=(90, 90))
 
         self.sett_button = ctk.CTkButton(self, text="Setting", image=self.img_sett, compound=TOP, 
                                     fg_color="#fff", hover_color="#B2B2B2", text_color="#333030", 
@@ -91,7 +102,7 @@ class MainMenu(ctk.CTk):
 
         # add see record
         self.img_seerec = ctk.CTkImage(light_image=Image.open(
-            "assets/images/see_exc.png"), size=(85, 85))
+            resource_path("assets\\images\\see_exc.png")), size=(85, 85))
 
         self.seerec_button = ctk.CTkButton(self, text="See Record", image=self.img_seerec, compound=TOP, 
                                     fg_color="#fff", hover_color="#B2B2B2", text_color="#333030", 
@@ -102,7 +113,7 @@ class MainMenu(ctk.CTk):
 
         # Create a new scan
         self.img_scan = ctk.CTkImage(light_image=Image.open(
-            "assets/images/scann.png"), size=(60, 60))
+            resource_path("assets\\images\\scann.png")), size=(60, 60))
 
         self.scan_button = ctk.CTkButton(self, text="Create a New Scan", image=self.img_scan, compound=LEFT, 
                                     fg_color="#1798F8", hover_color="#085288", text_color="#fff", 

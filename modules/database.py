@@ -39,7 +39,7 @@ class Database:
         )""")
         
         self.conn.commit()
-        self.dumpSQL()
+        # self.dumpSQL()
         self.conn.close()
 
     def create_data(self, table_name, fields, values):
@@ -47,7 +47,7 @@ class Database:
         query = f"INSERT INTO {table_name} ({', '.join(fields)}) VALUES ({placeholders})"
         self.conn.execute(query, values)
         self.conn.commit()
-        self.dumpSQL()
+        # self.dumpSQL()
         self.conn.close()
 
     def read_datas(self, table_name, fields=None, condition=None, values=None):
@@ -59,7 +59,7 @@ class Database:
         else:
             self.cur.execute(query)
         rows = self.cur.fetchall()
-        self.dumpSQL()
+        # self.dumpSQL()
         self.conn.close()
         return rows
 
@@ -75,7 +75,7 @@ class Database:
             # print(query, values)
             self.conn.execute(query, values)
         self.conn.commit()
-        self.dumpSQL()
+        # self.dumpSQL()
         self.conn.close()
 
     def delete_data(self, table_name, condition=None, values=None):
@@ -87,7 +87,7 @@ class Database:
         else:
             self.conn.execute(query)
         self.conn.commit()
-        self.dumpSQL()
+        # self.dumpSQL()
         self.conn.close()
 
     def dumpSQL(self):

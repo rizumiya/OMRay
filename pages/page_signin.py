@@ -1,3 +1,6 @@
+import os
+import sys
+
 import customtkinter as ctk
 from tkinter import messagebox
 from tkinter import *
@@ -7,23 +10,35 @@ from modules import general_functions as func, db_helper as dbhlp
 from . import page_signup as signup
 import config as cfg
 
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS2
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
 class PageSignIn(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.title("OMRay | Sign In")
         self.geometry('925x500+400+200')
         self.resizable(False, False)
-        self.iconbitmap('assets/images/OMRay.ico')
+        self.iconbitmap(resource_path('assets\\images\\wp.ico'))
 
         # Buat Background
 
-        self.imgbg = ctk.CTkImage(light_image=Image.open("assets/images/bg_wall.png"), size=(1000, 650))
+        self.imgbg = ctk.CTkImage(light_image=Image.open(resource_path("assets\\images\\bg_wall.png")), size=(1000, 650))
         self.l1=ctk.CTkLabel(master=self, image=self.imgbg, text=None)
         self.l1.place(x=0, y=0)
 
         # Atur tampilan
 
-        self.imgSi = ctk.CTkImage(light_image=Image.open("./assets/images/wp.png"), size=(298, 298))
+        self.imgSi = ctk.CTkImage(light_image=Image.open(resource_path("assets\\images\\wp.png")), size=(298, 298))
         ctk.CTkLabel(self, image=self.imgSi, bg_color='transparent', text=None).place(x=60, rely=0.2)
 
         self.frameSignIn = ctk.CTkFrame(self, corner_radius=25, width=350, height=350, bg_color="transparent")

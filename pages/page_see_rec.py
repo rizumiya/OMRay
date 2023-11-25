@@ -1,9 +1,22 @@
 import os
+import sys
+
 import customtkinter as ctk
 import openpyxl as xl
 from tkinter import messagebox, font, ttk
 
 import config as cfg
+
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS2
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 
 class PageSeeRecord(ctk.CTkToplevel):
@@ -12,9 +25,9 @@ class PageSeeRecord(ctk.CTkToplevel):
         self.title('OMRay | See Record')
         self.geometry('900x495+635+230')
         self.resizable(False, False)
-        self.iconbitmap(default='assets/images/OMRay.ico')
+        self.iconbitmap(default=resource_path(('assets\\images\\wp.ico')))
 
-        self.xlPath = "assets/datas/omray.xlsx"
+        self.xlPath = resource_path("omray.xlsx")
         self.sheet_name = 'Scanning result'
         self.search_filter_applied = False
         

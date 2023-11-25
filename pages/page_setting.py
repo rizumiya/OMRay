@@ -1,3 +1,6 @@
+import os
+import sys
+
 from tkinter import messagebox
 import customtkinter as ctk
 from tkinter import *
@@ -6,13 +9,24 @@ import config as cfg
 from modules import db_helper as dbh, general_functions as func
 
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS2
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
 class PageSetting(ctk.CTkToplevel):
     def __init__(self, parent, title, user, passw):
         super().__init__(parent)
         self.title(title)
         self.geometry('700x380+1000+70')
         self.resizable(False, False)
-        self.iconbitmap('assets/images/OMRay.ico')
+        self.iconbitmap(resource_path('assets\\images\\wp.ico'))
 
         # Inisialisasi variable utama
         self.funct = func.Functions()

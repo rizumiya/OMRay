@@ -43,5 +43,7 @@ Start Scanning
 <img src="extras/scan.png" alt="main menu" width="300">
 <br>
 
+
 _Usage_:
-Learn usage here 👉 [Unduh Panduan Penggunaan di Indonesia](extras/Usage%20in%20Indonesia.pdf)
+
+Learn usage here 👉 [Unduh Panduan Penggunaan dalam Bahasa Indonesia](extras/Usage%20in%20Indonesia.pdf)

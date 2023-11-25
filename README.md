@@ -44,4 +44,4 @@ Start Scanning
 <br>
 
 _Usage_:
-Learn usage here 👉 [Usage]("extras/Usage in Indonesia.pdf")
+Learn usage here 👉 [Unduh Panduan Penggunaan di Indonesia](extras/Usage%20in%20Indonesia.pdf)

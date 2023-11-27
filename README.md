@@ -1,18 +1,43 @@
 OMRay
 ======
 
-OMRay is an app that helps you detect multiple-choice answers for non-computer-based answer sheets with a user-friendly interface.
+OMRay is an application designed to help users detect multiple-choice answers for non-computer-based answer sheets with ease. It uses sophisticated algorithms to capture and analyze nuanced data and features an intuitive user interface, making it the perfect tool for anyone who needs to process large amounts of answer sheets quickly and accurately.
 
 
 _Current Features_ :
 
-- still under 'construction'
-- no stable version yet
-- multiple users and configurations (database)
-- save scanning results to excel
-- support external webcam
-- support quick scanning
-- and many more, just try it..
+OMRay comes with several features that make it a powerful and efficient tool for detecting multiple-choice answers. These include:
+
+- **Multiple users and configurations:** The application can support multiple users and configurations, allowing you to keep track of various settings and preferences.
+- **Save scanning results to Excel:** You can save scanning results to Excel, which makes it easy for you to analyze the data.
+- **Support for external webcam:** OMRay supports an external webcam, which can help improve the quality of the scans.
+- **Support for quick scanning:** The application offers quick scanning features, which can increase productivity and save time.
+- **Marking:** You can mark which answers are correct and which answers are wrong, making it possible to visualize data more easily.
+
+
+## How to Use OMRay
+
+Using OMRay is simple and straightforward. To get started, follow these steps:
+
+1. Launch the application on your device.
+2. Connect the webcam.
+3. Choose the correct configuration and settings.
+4. Load the answer sheet.
+5. Start scanning.
+6. Review the results.
+7. Save the results to Excel.
+
+
+## System Requirements
+
+OMRay runs on Windows operating systems. To use OMRay, you'll need a device that meets the following minimum requirements:
+
+- Windows 8 or later.
+- Processor: Intel Core i3 or higher.
+- Webcam: Logitech HD Pro Webcam C920 or better.
+- RAM: 2GB or more.
+
+Please note that performance may vary depending on the quality of the hardware you are using.
 
 
 _Supported Answer Sheet_:
@@ -44,6 +69,6 @@ Start Scanning
 <br>
 
 
-_Usage_:
+_Docs_:
 
-Learn usage here 👉 [Unduh Panduan Penggunaan dalam Bahasa Indonesia](extras/Usage%20in%20Indonesia.pdf)
+Download documentation here 👉 [Unduh Panduan Penggunaan dalam Bahasa Indonesia](extras/Usage%20in%20Indonesia.pdf)

@@ -4,8 +4,6 @@ OMRay
 OMRay is an application designed to help users detect multiple-choice answers for non-computer-based answer sheets with ease. It uses sophisticated algorithms to capture and analyze nuanced data and features an intuitive user interface, making it the perfect tool for anyone who needs to process large amounts of answer sheets quickly and accurately.
 
 
-_Current Features_ :
-
 OMRay comes with several features that make it a powerful and efficient tool for detecting multiple-choice answers. These include:
 
 - **Multiple users and configurations:** The application can support multiple users and configurations, allowing you to keep track of various settings and preferences.
@@ -40,12 +38,12 @@ OMRay runs on Windows operating systems. To use OMRay, you'll need a device that
 Please note that performance may vary depending on the quality of the hardware you are using.
 
 
-_Supported Answer Sheet_:
+## Supported Answer Sheet
 <br>
 <img src="extras/p.jpg" alt="supported answer sheet" width="250">
 
 
-_Screenshots_:
+## Screenshots
 
 Main Menu
 <br>
